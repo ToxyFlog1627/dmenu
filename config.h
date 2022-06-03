@@ -2,7 +2,7 @@
 /* Default settings; can be overriden by command line. */
 
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
-static const unsigned int alpha = 0xff48;
+static const unsigned int alpha = 0xffa0;
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
 	"Hack Nerd Font:style=Regular:size=10"
@@ -23,6 +23,8 @@ static const unsigned int alphas[SchemeLast][2] = {
 
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 0;
+static unsigned int lineheight = 10;
+static unsigned int min_lineheight = 8;
 
 /*
  * Characters not considered part of a word while deleting words
