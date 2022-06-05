@@ -141,7 +141,8 @@ drawhighlights(struct item *item, int x, int y, int maxw, unsigned int idx)
 	if (!(strlen(item->text) && strlen(text)))
 		return;
 
-    Clr *highlightScheme = scheme[item == sel ? SchemeSelHighlight : SchemeNormHighlight];
+    char isSelected = item == sel || item->left == sel || item->right == sel; 
+    Clr *highlightScheme = scheme[isSelected ? SchemeSelHighlight : SchemeNormHighlight];
     highlightScheme[1] = scheme[idx][1];
 
 	drw_setscheme(drw, highlightScheme);
